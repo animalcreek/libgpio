@@ -1,0 +1,3 @@
+[submodule "libfile"]
+	path = libfile
+	url = https://github.com/animalcreek/libfile
