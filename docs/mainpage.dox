@@ -1,0 +1,14 @@
+/**
+ * @brief Main libgpio documentation page
+ * @author Mark Greer <mgreer@animalcreek.com>
+ * @file
+ */
+
+/**
+ * @mainpage libgpio - GPIO Helper Library
+ *
+ * libgpio is an open source library with some helpful routines to make
+ * common Linux(tm) GPIO operations easier.
+ *
+ * Source code is available at https://github.com/animalcreek/libgpio
+ */
