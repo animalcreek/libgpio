@@ -28,8 +28,8 @@
  * @author: Mark Greer <mgreer@animalcreek.com>
  */
 
-#ifndef __GPIO_H_
-#define __GPIO_H_
+#ifndef __LIBGPIO_H_
+#define __LIBGPIO_H_
 
 /**
  * @file libgpio/gpio.h
