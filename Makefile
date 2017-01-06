@@ -40,7 +40,7 @@ SUBDIRS := libfile
 libgpio_OBJS = gpio.o
 
 PHONY := all
-all: init_submodules update_submodules $(libgpio_OBJS)
+all: $(libgpio_OBJS)
 	@for i in $(SUBDIRS); do \
 		$(MAKE) -C $$i; \
 	done
