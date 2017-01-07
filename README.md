@@ -28,3 +28,33 @@ Take a look at the [CONTRIBUTING file](https://github.com/animalcreek/libgpio/bl
 
 *libgpio* source documentation is available
 [here](https://animalcreek.github.io/libgpio)
+
+## Building
+
+This repository uses code from the
+[animalcreek/libfile](https://github.com/animalcreek/libfile)
+git repository.  To include that code, this repository adds libfile as a
+[git submodule](https://git-scm.com/book/en/Git-Tools-Submodules).
+One of the odd things about git submodules is that the contents of
+the submodule are not downloaded when the parent repository is cloned.
+To make the code appear in the parent repository, the person cloning
+must first initialize the submodule and then update it to download the
+contents of the submodule.  This can be done with the following git
+commands:
+```shell-script
+	$ git submodule init
+	$ git submodule update
+```
+The 'init' command need only be done once and the 'update' need only be
+done when the contents of the submodule are to be updated.  For convenience
+the Makefile contains rules to perform those tasks:
+```shell-script
+	$ make init_submodules
+	$ make update_submodules
+```
+Once you have the source as you want it, you can build it with the following
+command:
+```shell-script
+	$ make
+```
+The object files created will be 'gpio.o' and 'libfile/file.o'
