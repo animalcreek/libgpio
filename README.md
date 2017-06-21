@@ -14,7 +14,7 @@ libsoc and, well, was already written so why not publish?
 
 ## You're using goto statements??  Eww...
 
-See Section 7) of [Linux(tm) kernel's coding style](http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/coding-style.rst).
+See Section 7) of [Linux(tm) kernel's coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html#centralized-exiting-of-functions).
 
 ## Want to contribute?
 
