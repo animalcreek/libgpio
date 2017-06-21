@@ -18,12 +18,12 @@ for the bug.
 - Follow the coding style and submitting patches guideslines described below.
 
 ## Coding style
-Please use the [Linux(tm) kernel's coding style](http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/coding-style.rst).
+Please use the [Linux(tm) kernel's coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html).
 
 ## Submitting patches
 
-- Follow the [Linux(tm) kernel's patch submission guidelines](http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst) and be sure to note the *Developer's Certificate of Origin*
-section.
+- Follow the [Linux(tm) kernel's patch submission guidelines](https://www.kernel.org/doc/html/latest/process/submitting-patches.html) and be sure to note the
+*Developer's Certificate of Origin* section.
 - Be sure to create a summary line that is descriptive and consistent with
 the existing summary lines.
 - Always provide a commit description and a 'Signed-off-by:' as described in
