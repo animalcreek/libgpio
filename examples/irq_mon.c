@@ -155,7 +155,7 @@ static int wait_for_irqs(void *gpio_handle)
 		if (ret < 0) {
 			if (errno != EINTR)
 				fprintf(stderr, "select() failed: %d (%s)\n",
-					-ret, strerror(-ret));
+					-errno, strerror(-errno));
 
 			return -errno;
 		} else if ((ret != 1) || !FD_ISSET(fd, &exceptfds)) {
