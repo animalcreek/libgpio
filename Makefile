@@ -16,7 +16,7 @@ Q ?= @
 
 export TOPDIR Q
 
-SUBDIRS := libfile
+SUBDIRS := libfile examples
 
 libgpio_OBJS = gpio.o
 
