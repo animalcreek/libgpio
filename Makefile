@@ -33,7 +33,9 @@
 MAKEFLAGS += --no-print-directory
 
 TOPDIR ?= $(CURDIR)
-export TOPDIR
+Q ?= @
+
+export TOPDIR Q
 
 SUBDIRS := libfile
 
