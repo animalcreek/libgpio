@@ -176,6 +176,8 @@ int main(int argc, char *argv[])
 	void *gpio_handle;
 	int ret, exit_val = EXIT_FAILURE;
 
+	shutdown = false;
+
 	ret = set_sigact();
 	if (ret) {
 		fprintf(stderr, "set_sigact() failed: %d (%s)\n", -ret,
@@ -196,8 +198,6 @@ int main(int argc, char *argv[])
 		print_usage(argv[0]);
 		goto free_ip;
 	}
-
-	shutdown = false;
 
 	ret = gpio_init(ip->gpio_num, &gpio_handle);
 	if (ret) {
