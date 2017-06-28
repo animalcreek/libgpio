@@ -100,28 +100,28 @@ static int set_sigact(void)
 	if (ret) {
 		fprintf(stderr, "can't set SIGINT handler: %d (%s)\n", errno,
 			strerror(errno));
-		return errno;
+		return -errno;
 	}
 
 	ret = sigaction(SIGUSR1, &sig_act, NULL);
 	if (ret) {
 		fprintf(stderr, "can't set SIGUSR1 handler: %d (%s)\n", errno,
 			strerror(errno));
-		return errno;
+		return -errno;
 	}
 
 	ret = sigaction(SIGUSR2, &sig_act, NULL);
 	if (ret) {
 		fprintf(stderr, "can't set SIGUSR2 handler: %d (%s)\n", errno,
 			strerror(errno));
-		return errno;
+		return -errno;
 	}
 
 	ret = sigaction(SIGTERM, &sig_act, NULL);
 	if (ret) {
 		fprintf(stderr, "can't set SIGTERM handler: %d (%s)\n", errno,
 			strerror(errno));
-		return errno;
+		return -errno;
 	}
 
 	return 0;
@@ -146,9 +146,12 @@ static int wait_for_irqs(void *gpio_handle)
 	do {
 		ret = gpio_read(gpio_handle, &c);
 		if (ret) {
-			fprintf(stderr, "can't get read GPIO value: %d (%s)\n",
-				-ret, strerror(-ret));
-			return -EIO;
+			if (ret != EINTR)
+				fprintf(stderr,
+					"can't get read GPIO value: %d (%s)\n",
+					-ret, strerror(-ret));
+
+			return -ret;
 		}
 
 		ret = select(fd + 1, NULL, NULL, &exceptfds, NULL);
@@ -167,7 +170,7 @@ static int wait_for_irqs(void *gpio_handle)
 		printf("IRQ: %c\n", c);
 	} while (!shutdown);
 
-	return ret;
+	return -EINTR;
 }
 
 int main(int argc, char *argv[])
