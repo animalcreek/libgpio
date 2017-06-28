@@ -67,7 +67,7 @@ The object files can be removed with this command:
 By default, the command line used to build the source will be printed
 for each file (e.g., cc -c gpio.c -o gpio.o) along with a summary line
 (e.g., CC    gpio.c).  Printing the command line can be stopped by setting
-the make variable 'Q' to '@' (e.g., make Q="@").  
+the make variable 'Q' to '@' (e.g., make Q="@").
 
 The idea behind this is similar to what the Linux(tm) kernel's main
 [Makefile does](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Makefile#n69)
